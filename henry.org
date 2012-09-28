@@ -1,7 +1,7 @@
 #+TITLE: Local User Customizations
 #+OPTIONS: toc:nil num:nil ^:nil
 
-* Starter Kit kjhealy
+* Starter Kit Henry
 This file contains very local customizations---ones that in some cases
 you will not be able to just drop in and use because, e.g., they
 involve references to particular files on my own machine. It's
@@ -178,12 +178,12 @@ Tell RefTeX where the bibliography files are.
 #+srcname: local-reftex
 #+begin_src emacs-lisp    
     ;; Make RefTex able to find my local bib files
-    (setq reftex-bibpath-environment-variables
-    '("/Users/kjhealy/Library/texmf/bibtex/bib"))
+    ;; (setq reftex-bibpath-environment-variables
+    ;; '("/Users/kjhealy/Library/texmf/bibtex/bib"))
 
     ;; Default bibliography
-    (setq reftex-default-bibliography
-    '("/Users/kjhealy/Documents/bibs/socbib.bib"))
+    ;; (setq reftex-default-bibliography
+    ;; '("/Users/kjhealy/Documents/bibs/socbib.bib"))
 
 
     ;; CDLaTex minor mode: tab-trigger environments, paired paren
@@ -234,10 +234,10 @@ Tell RefTeX where the bibliography files are.
  $PATH directly.)
 #+src-name: pandoc_mode
 #+begin_src emacs-lisp
- (setenv "PATH" (concat "/Users/kjhealy/.cabal/bin:" (getenv "PATH")))
- (load "pandoc-mode")
- (add-hook 'markdown-mode-hook 'turn-on-pandoc)
- (add-hook 'pandoc-mode-hook 'pandoc-load-default-settings)
+ ;; (setenv "PATH" (concat "/Users/kjhealy/.cabal/bin:" (getenv "PATH")))
+ ;; (load "pandoc-mode")
+ ;; (add-hook 'markdown-mode-hook 'turn-on-pandoc)
+ ;; (add-hook 'pandoc-mode-hook 'pandoc-load-default-settings)
 #+end_src
 
 ** Local iBuffer Settings
@@ -601,10 +601,10 @@ Some last tweaks.
   '(blink-cursor-mode nil)
   '(text-mode-hook (quote (text-mode-hook-identify)))
   )
+
+  ;; Use eshell wrapper in shell mode
+  (setenv "ESHELL" (expand-file-name "~/bin/eshell"))
+
+  ;; Turn off visual bell
+  (setq ring-bell-function 'ignore)
 #+end_src
-   
-   
-   
-   
-   
-   
