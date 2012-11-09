@@ -601,21 +601,21 @@ Some last tweaks.
   '(blink-cursor-mode nil)
   '(text-mode-hook (quote (text-mode-hook-identify)))
   )
-
+  
   ;; Get packages from Marmalade if not already installed
   (when (not package-archive-contents)
     (package-refresh-contents))
   
-  (defvar my-packages '(clojure-mode nrepl)
+  (defvar my-packages '(clojure-mode nrepl starter-kit-js)
     "A list of packages to ensure are installed at launch.")
   
   (dolist (p my-packages)
     (when (not (package-installed-p p))
       (package-install p)))
-
+  
   ;; Use eshell wrapper in shell mode
   (setenv "ESHELL" (expand-file-name "~/bin/eshell"))
-
+  
   ;; Turn off visual bell
   (setq ring-bell-function 'ignore)
 #+end_src
