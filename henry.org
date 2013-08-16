@@ -37,6 +37,8 @@ as turning off the sans-serif heading style that AucTeX defaults to.
 
 #+srcname: local-settings
 #+begin_src emacs-lisp
+  (load-theme 'solarized-dark t)
+
   (add-hook 'latex-mode-hook 
             (lambda ()
               (set-face-attribute 'font-latex-sectioning-5-face nil :inherit nil :foreground "#b58900")
